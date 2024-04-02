@@ -2,7 +2,7 @@ import React from "react";
 import {Container, Nav, Navbar} from "react-bootstrap";
 import { FaBookOpen } from "react-icons/fa";
 
-export default function StoreNavbar() {
+export default function MyNav() {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>

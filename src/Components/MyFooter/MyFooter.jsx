@@ -1,7 +1,7 @@
 import React from "react";
 import {Container, Nav, Navbar, ListGroup} from "react-bootstrap";
 
-export default function StoreFooter() {
+export default function MyFooter() {
     return (
         <Navbar expand="lg" className="bg-body-tertiary fixed-bottom">
             <Container>

@@ -1,18 +1,23 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import StoreNavbar from "./Components/Navbar/StoreNavbar.jsx"
-import StoreFooter from "./Components/Footer/StoreFooter.jsx";
-import WelcomeAlert from "./Components/Alert/welcomeAlert.jsx";
-import BookCards from './Components/BookCards/BookCards.jsx';
+import MyNav from "./Components/MyNav/MyNav.jsx"
+import MyFooter from "./Components/MyFooter/MyFooter.jsx";
+import Welcome from "./Components/Welcome/Welcome.jsx";
+import AllTheBooks from './Components/AllTheBooks/AllTheBooks.jsx';
 import fantasy from "./Data/fantasy.json";
 
 function App() {
-  console.log(fantasy);
+
+  const data = fantasy;
+
   return (
     <div>
-      <StoreNavbar />
-      <WelcomeAlert />
-      <StoreFooter />
+      <MyNav />
+      <Welcome />
+      <AllTheBooks 
+        data = {data}
+      />
+      <MyFooter />
     </div>
   );
 }
