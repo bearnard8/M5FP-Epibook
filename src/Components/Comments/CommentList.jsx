@@ -8,9 +8,10 @@ export default function CommentList(props) {
 
     return (
         <ListGroup>
-            {data.map((el) => (
+            {data.map((el, index) => (
                 <SingleComment
-                    key = {el.elementId}
+                    key = {index}
+                    asin = {el.elementId}
                     comment = {el.comment}
                     rate = {el.rate}
                 />

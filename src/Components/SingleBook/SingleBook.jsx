@@ -19,12 +19,13 @@ export default function SingleBook(props) {
             xl="3" 
             lg="4" 
             md="6" 
-            s
+            sm
         >
-            <Card className={selected && "selected-card"} onClick={handleSelected}>
+            <Card className={selected && "selected-card"}>
                 <Card.Img 
                     variant="top" 
-                    src={image} 
+                    src={image}
+                    onClick={handleSelected} 
                 />
                 <Card.Body>
                     <Card.Title>

@@ -1,6 +1,6 @@
 # EpicBook
 
-GET: <https://striveschool-api.herokuapp.com/api/books/:asin/comments/>
+GET: <https://striveschool-api.herokuapp.com/api/books/:ASIN/comments/>
 POST: <https://striveschool-api.herokuapp.com/api/comments/>
     {
         "comment": string, //testo della recensione
@@ -29,10 +29,10 @@ PUT e DELETE: <https://striveschool-api.herokuapp.com/api/comments/:id>
 
 ### Fetches
 
-1. GET e POST per leggere e creare recensioni sui libri
-2. Crea un componente CommentArea e incorporalo al componente SingleBook, quando si clicca su questo viene renderizzata l'area commenti (&& e selected)
-3. CommentsList riceverà la lista di recensioni da CommentArea con una prop, e renderizzerà la lista usando il componente SingleComment
-4. AddComment conterrà un form per raccogliere il testo della recensione e la valutazione da 1 a 5; una volta raccolti i dati tramite pulsante (onClick) verrà effettuata una chiamata POST
+1. GET e POST per leggere e creare recensioni sui libri - FATTO 
+2. Crea un componente CommentArea e incorporalo al componente SingleBook, quando si clicca su questo viene renderizzata l'area commenti (&& e selected) - FATTO
+3. CommentsList riceverà la lista di recensioni da CommentArea con una prop, e renderizzerà la lista usando il componente SingleComment - FATTO
+4. AddComment conterrà un form per raccogliere il testo della recensione e la valutazione da 1 a 5; una volta raccolti i dati tramite pulsante (onClick) verrà effettuata una chiamata POST - FATTO
 5. Inserisci DELETE e PUT
 6. Inserisci spinner e messaggi di errore
 
@@ -50,7 +50,7 @@ PUT e DELETE: <https://striveschool-api.herokuapp.com/api/comments/:id>
 3. Cambia il modo in cui viene salvato il "selected", non in SingleBook ma in LatestRelease, non conterrà un booleano ma l'ASIN del libro cliccato
 4. implementa lo state lifting e modifica SingleBook di conseguenza
 5. passa il valore di selected sia a SingleBook che a CommentArea, quando cambia il valore CommentArea deve eseguire una nuova fetch (utilizza componentIdUpdate e sfrutta le prop)
-6. assicurati che l'Asin del libro in "selected" arrivi anche a AddComment, in modo da mantenere aggiornata la sua proprietà elementId
+6. assicurati che l'ASIN del libro in "selected" arrivi anche a AddComment, in modo da mantenere aggiornata la sua proprietà elementId
 
 ### Routing
 
