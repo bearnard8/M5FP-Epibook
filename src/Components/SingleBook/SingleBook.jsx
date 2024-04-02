@@ -2,6 +2,7 @@ import React from 'react'
 import {Card, Button, Col} from "react-bootstrap"
 import { useState } from 'react';
 import "./SingleBook.css"
+import CommentArea from '../Comments/CommentArea';
 
 export default function SingleBook(props) {
 
@@ -32,7 +33,8 @@ export default function SingleBook(props) {
                     <Button variant="primary">Add to cart</Button>
                     <p>{price}</p>
                 </Card.Body>
+                {selected && <CommentArea asin = {asin}/>}
             </Card>
-        </Col>
+        </Col>    
     )
 }

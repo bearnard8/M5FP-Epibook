@@ -9,10 +9,12 @@ export default function AllTheBooks(props) {
     return (
         <Container className="book-container">
             <Row>
+
                 {data.length > 0 &&
                     data.map((el) => (
                         <SingleBook 
                             key={el.asin}
+                            asin={el.asin}
                             title={el.title}
                             image={el.img}
                             price={el.price}
