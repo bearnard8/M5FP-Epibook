@@ -1,13 +1,24 @@
-import React from "react";
+import React ,{useContext} from "react";
 import SingleBook from "../SingleBook/SingleBook";
-import {Container, Row, Col} from "react-bootstrap"
+import {Container, Row} from "react-bootstrap"
+/*import { SearchContext } from "../../Context/SearchContextProvider";*/
+import { ThemeContext } from "../../Context/ThemeContextProvider";
 
 export default function AllTheBooks(props) {
 
     const {data} = props;
 
+    const {theme} = useContext(ThemeContext);
+
+    //const [searchValue] = useContext(SearchContext);
+
+    //data.filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase()))
+
     return (
-        <Container className="book-container">
+        <Container 
+        className="book-container"
+        bg={theme}
+        >
             <Row>
 
                 {data.length > 0 &&

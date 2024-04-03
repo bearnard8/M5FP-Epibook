@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Card, Button, Col} from "react-bootstrap"
 import { useState } from 'react';
 import "./SingleBook.css"
 import CommentArea from '../Comments/CommentArea';
+import { ThemeContext } from "../../Context/ThemeContextProvider";
 
-export default function SingleBook(props) {
-
-    const {asin, title, image, price, category} = props;
+export default function SingleBook({asin, title, image, price, category}) {
 
     const [selected, setSelected] = useState(false);
+
+    const {theme} = useContext(ThemeContext);
 
     function handleSelected() {
         setSelected(!selected)
@@ -21,7 +22,11 @@ export default function SingleBook(props) {
             md="6" 
             sm
         >
-            <Card className={selected && "selected-card"}>
+            <Card 
+            className={selected && "selected-card"}
+            bg={theme}
+            text={theme === "dark" ? "light" : "dark"}
+            >
                 <Card.Img 
                     variant="top" 
                     src={image}

@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import {Container, Nav, Navbar, ListGroup} from "react-bootstrap";
+import { ThemeContext } from "../../Context/ThemeContextProvider";
 
 export default function MyFooter() {
+
+    const {theme} = useContext(ThemeContext);
+
     return (
-        <Navbar expand="lg" className="bg-body-tertiary fixed-bottom">
+        <Navbar 
+        expand="lg" 
+        className=" fixed-bottom"
+        data-bs-theme={theme}
+        bg={theme}
+        >
             <Container>
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Nav className="me-auto">
-                    <ListGroup variant="flush" className="d-flex flex-row">
+                    <ListGroup horizontal>
                         <ListGroup.Item className="p-0">
                             <Nav.Link href="#home">Home</Nav.Link>
                         </ListGroup.Item>

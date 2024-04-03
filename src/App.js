@@ -4,7 +4,9 @@ import MyNav from "./Components/MyNav/MyNav.jsx"
 import MyFooter from "./Components/MyFooter/MyFooter.jsx";
 import Welcome from "./Components/Welcome/Welcome.jsx";
 import AllTheBooks from './Components/AllTheBooks/AllTheBooks.jsx';
+import SearchContextProvider from './Context/SearchContextProvider.jsx';
 import fantasy from "./Data/fantasy.json";
+import ThemeContextProvider from './Context/ThemeContextProvider.jsx';
 
 function App() {
 
@@ -12,12 +14,16 @@ function App() {
 
   return (
     <div>
-      <MyNav />
-      <Welcome />
-      <AllTheBooks 
-        data = {data}
-      />
-      <MyFooter />
+      <ThemeContextProvider>
+        <SearchContextProvider>
+          <MyNav />
+          <Welcome />
+          <AllTheBooks 
+            data = {data}
+          />
+        </SearchContextProvider>
+        <MyFooter />
+      </ThemeContextProvider>
     </div>
   );
 }

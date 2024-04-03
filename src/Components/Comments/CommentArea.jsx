@@ -2,9 +2,7 @@ import React, {useState, useEffect} from 'react'
 import CommentList from './CommentList';
 import {Form, Button} from "react-bootstrap"
 
-export default function CommentArea(props) {
-
-  const {asin} = props;
+export default function CommentArea({asin}) {
 
   const [comment, setComment] = useState("")
 
