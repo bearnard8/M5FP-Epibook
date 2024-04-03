@@ -8,7 +8,7 @@ export default function MyFooter() {
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Nav className="me-auto">
-                    <ListGroup variant="flush">
+                    <ListGroup variant="flush" className="d-flex flex-row">
                         <ListGroup.Item className="p-0">
                             <Nav.Link href="#home">Home</Nav.Link>
                         </ListGroup.Item>

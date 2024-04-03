@@ -29,7 +29,7 @@ PUT e DELETE: <https://striveschool-api.herokuapp.com/api/comments/:id>
 
 ### Fetches
 
-1. GET e POST per leggere e creare recensioni sui libri - FATTO 
+1. GET e POST per leggere e creare recensioni sui libri - FATTO
 2. Crea un componente CommentArea e incorporalo al componente SingleBook, quando si clicca su questo viene renderizzata l'area commenti (&& e selected) - FATTO
 3. CommentsList riceverà la lista di recensioni da CommentArea con una prop, e renderizzerà la lista usando il componente SingleComment - FATTO
 4. AddComment conterrà un form per raccogliere il testo della recensione e la valutazione da 1 a 5; una volta raccolti i dati tramite pulsante (onClick) verrà effettuata una chiamata POST - FATTO
@@ -61,7 +61,7 @@ PUT e DELETE: <https://striveschool-api.herokuapp.com/api/comments/:id>
 5. Aggiungi un pulsante su ogni SingleBook per poter navigare verso BookDetails
 6. Crea il componente BookDetails, tramite l'ASIN preso dal url caricherà i dettagli e le recensioni del libro. Importa il file .json in BookDetails e trova il libro corretto.
 
-### Tests
+### Tests - Non valutato
 
 1. Verifica che il componente Welcome venga montato correttamente
 2. Verifica che vengano effettivamente renderizzate tante bootstrap card quanti sono i libri nel .json utilizzato
