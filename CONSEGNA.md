@@ -41,7 +41,7 @@ PUT e DELETE: <https://striveschool-api.herokuapp.com/api/comments/:id>
 1. Spostare il campo di ricerca all'interno della navbar
 2. la logica deve trovarsi in App, per poter passare lo stato ai componenti inferiori (bisognerà passare delle props da App a MyNav), da App a AllTheBooks per la ricerca
 3. questa prop servirà per fare il filter in AllTheBooks
-4. Usa ReactContext per condividere con l'intera applicazione un tema light o dark, tramite un button
+4. Usa ReactContext per condividere con l'intera applicazione un tema light o dark, tramite un button - FATTO
 
 ### Modifica del Layout
 
