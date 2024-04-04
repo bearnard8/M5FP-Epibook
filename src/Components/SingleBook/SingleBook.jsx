@@ -1,32 +1,29 @@
 import React, { useContext } from 'react'
 import {Card, Button, Col} from "react-bootstrap"
-//import { useState } from 'react';
 import "./SingleBook.css"
-import CommentArea from '../Comments/CommentArea';
 import { ThemeContext } from "../../Context/ThemeContextProvider";
 
-export default function SingleBook({asin, title, image, price, handleSelected, isSelected}) {
-
-    //const [selected, setSelected] = useState(false);
+export default function SingleBook({asin, title, image, price, handleSelection, isSelected}) {
 
     const {theme} = useContext(ThemeContext);
 
     return (
         <Col 
-            xl="3" 
-            lg="4" 
+            xl="2" 
+            lg="3" 
             md="6" 
             sm
         >
             <Card 
-            className={isSelected && "selected-card"}
+            className={`my-1 h-100  ${isSelected && "selected-card"}`}
             bg={theme}
             text={theme === "dark" ? "light" : "dark"}
             >
                 <Card.Img 
+                className='img-fluid mh-100'
                     variant="top" 
                     src={image}
-                    onClick={() => handleSelected(asin)} 
+                    onClick={() => handleSelection(asin)} 
                 />
                 <Card.Body>
                     <Card.Title>
@@ -35,7 +32,6 @@ export default function SingleBook({asin, title, image, price, handleSelected, i
                     <Button variant="primary">Add to cart</Button>
                     <p>{price}</p>
                 </Card.Body>
-                {isSelected && <CommentArea asin = {asin}/>}
             </Card>
         </Col>    
     )

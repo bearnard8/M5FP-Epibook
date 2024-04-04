@@ -71,7 +71,7 @@ export default function CommentArea({asin}) {
       <CommentList 
         data = {data}
       />
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className = "m-2">
         <Form.Group>
           <Form.Control
           required

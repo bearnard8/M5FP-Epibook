@@ -2,24 +2,21 @@ import React ,{useContext} from "react";
 import {Container, Nav, Navbar, Form, Button} from "react-bootstrap";
 import { FaBookOpen } from "react-icons/fa";
 import { CiLight } from "react-icons/ci";
-/*import SearchContext from "../../Context/SearchContextProvider";*/
+import { SearchContext } from "../../Context/SearchContextProvider";
 import { ThemeContext } from "../../Context/ThemeContextProvider";
 
 export default function MyNav() {
 
-    //const  [searchValue, setSearchValue]  = useContext(SearchContext);
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     e.stopPropagation();
-
-
-    // }
+    const  {searchValue, setSearchValue}  = useContext(SearchContext);
 
     const {theme, setTheme} = useContext(ThemeContext);
 
     const handleTheme = (e) => {
         setTheme(theme === "dark" ? "light" : "dark")
+    }
+
+    const updateSearchValue = (e) => {
+        setSearchValue(e.target.value)
     }
 
     return (
@@ -43,8 +40,7 @@ export default function MyNav() {
                     <Nav.Link href="#link">About</Nav.Link>
                     <Nav.Link href="#link">Browser</Nav.Link>
                 </Nav>
-                <Form 
-                /*onSubmit={handleSubmit}*/
+                <Form
                 className="d-flex p-1"
                 >
                     <Form.Control
@@ -52,14 +48,8 @@ export default function MyNav() {
                         type="text"
                         placeholder="Search a book..."
                         className=" mr-sm-2"
-                        //value = {searchValue}
-                        //onChange = {(e) => setSearchValue(e.target.value)}
-                    />
-                    <Button 
-                        as="input"
-                        type="submit"
-                        value="Submit"
-                        size="sm"
+                        value = {searchValue}
+                        onChange = {(e) => updateSearchValue(e)}
                     />
                 </Form>
             </Navbar.Collapse>
