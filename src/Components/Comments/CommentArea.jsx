@@ -1,8 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import CommentList from './CommentList';
 import {Form, Button} from "react-bootstrap"
+import { SelectionContext } from '../../Context/SelectionContextProvider';
 
-export default function CommentArea({asin}) {
+export default function CommentArea() {
+  
+  const {selected: asin} = useContext(SelectionContext)
 
   const [comment, setComment] = useState("")
 
@@ -52,7 +55,7 @@ export default function CommentArea({asin}) {
     }); 
       if (response.ok) {
         setComment("");
-        setRate(); //il radio del rate rimane selezionato
+        setRate();
         fetchComments()
         //notificare successo di invio
       } else {

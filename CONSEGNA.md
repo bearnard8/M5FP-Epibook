@@ -24,7 +24,7 @@ PUT e DELETE: <https://striveschool-api.herokuapp.com/api/comments/:id>
 
 1. Crea un componente di nome SingleBook, riceverà un libro come prop, e renderizzerà la sua copertina e il suo titolo. Utilizza la card di react-bootstrap - FATTO
 2. Modifica il componente AllTheBooks  in modo che il .map() renderizzi una lista di componenti SingleBook - FATTO
-3. Crea un input controllato all'interno di AllTheBooks, deve utilizzare il valore di questo input come filtro per mostrare solamente i libri che contengono il testo della ricerca -> Vedi Context-1.
+3. Crea un input controllato all'interno di AllTheBooks, deve utilizzare il valore di questo input come filtro per mostrare solamente i libri che contengono il testo della ricerca -> Vedi Context-1. - FATTO
 4. Crea lo stato interno al SingleBook e inserisci il Selected, se true la card deve avere bordo rosso - FATTO
 
 ### Fetches
@@ -38,19 +38,19 @@ PUT e DELETE: <https://striveschool-api.herokuapp.com/api/comments/:id>
 
 ### Context
 
-1. Spostare il campo di ricerca all'interno della navbar
-2. la logica deve trovarsi in App, per poter passare lo stato ai componenti inferiori (bisognerà passare delle props da App a MyNav), da App a AllTheBooks per la ricerca
-3. questa prop servirà per fare il filter in AllTheBooks
+1. Spostare il campo di ricerca all'interno della navbar  - FATTO
+2. la logica deve trovarsi in App, per poter passare lo stato ai componenti inferiori (bisognerà passare delle props da App a MyNav), da App a AllTheBooks per la ricerca - FATTO
+3. questa prop servirà per fare il filter in AllTheBooks - FATTO
 4. Usa ReactContext per condividere con l'intera applicazione un tema light o dark, tramite un button - FATTO
 
 ### Modifica del Layout
 
-1. due colonne: sinistra che mostrerà le copertine dei libri, destra che mostrerà sempre CommentArea, rimuovi l'istanza di CommentArea all'interno di SingleBook.
+1. due colonne: sinistra che mostrerà le copertine dei libri, destra che mostrerà sempre CommentArea, rimuovi l'istanza di CommentArea all'interno di SingleBook. - FATTO
 2. al caricamento dell'app, CommentArea non riceverà immediatamente un libro per effettuare la fetch delle recensioni, fai in modo che CommentArea mandi in crash tutto quando non possiede dati da mostrare (valore iniziale dello state)
-3. Cambia il modo in cui viene salvato il "selected", non in SingleBook ma in LatestRelease, non conterrà un booleano ma l'ASIN del libro cliccato
-4. implementa lo state lifting e modifica SingleBook di conseguenza
-5. passa il valore di selected sia a SingleBook che a CommentArea, quando cambia il valore CommentArea deve eseguire una nuova fetch (utilizza componentIdUpdate e sfrutta le prop)
-6. assicurati che l'ASIN del libro in "selected" arrivi anche a AddComment, in modo da mantenere aggiornata la sua proprietà elementId
+3. Cambia il modo in cui viene salvato il "selected", non in SingleBook ma in LatestRelease, non conterrà un booleano ma l'ASIN del libro cliccato - FATTO
+4. implementa lo state lifting e modifica SingleBook di conseguenza - FATTO
+5. passa il valore di selected sia a SingleBook che a CommentArea, quando cambia il valore CommentArea deve eseguire una nuova fetch (utilizza componentIdUpdate e sfrutta le prop) - FATTO
+6. assicurati che l'ASIN del libro in "selected" arrivi anche a AddComment, in modo da mantenere aggiornata la sua proprietà elementId - FATTO
 
 ### Routing
 

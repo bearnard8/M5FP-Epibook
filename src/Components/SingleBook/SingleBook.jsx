@@ -2,10 +2,23 @@ import React, { useContext } from 'react'
 import {Card, Button, Col} from "react-bootstrap"
 import "./SingleBook.css"
 import { ThemeContext } from "../../Context/ThemeContextProvider";
+import {useNavigate} from "react-router-dom"
+import BookDetails from './BookDetails';
 
 export default function SingleBook({asin, title, image, price, handleSelection, isSelected}) {
 
     const {theme} = useContext(ThemeContext);
+
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate("/details/" + asin);
+    }
+    // <BookDetails
+    // title = {title}
+    // image = {image}
+    // price = {price}
+    // />
 
     return (
         <Col 
@@ -29,8 +42,13 @@ export default function SingleBook({asin, title, image, price, handleSelection, 
                     <Card.Title>
                         {title}
                     </Card.Title>
-                    <Button variant="primary">Add to cart</Button>
-                    <p>{price}</p>
+                    <Button 
+                    variant="primary"
+                    onClick={handleNavigate}
+                    >
+                        Dettagli
+                    </Button>
+                    <p>{price}€</p>
                 </Card.Body>
             </Card>
         </Col>    

@@ -1,8 +1,9 @@
-import React ,{useContext, useState} from "react";
+import React ,{useContext, useEffect} from "react";
 import SingleBook from "../SingleBook/SingleBook";
 import {Container, Row} from "react-bootstrap"
 import { SearchContext } from "../../Context/SearchContextProvider";
 import { ThemeContext } from "../../Context/ThemeContextProvider";
+import { SelectionContext } from "../../Context/SelectionContextProvider";
 import "./AllTheBooks.css"
 import Welcome from "../Welcome/Welcome";
 
@@ -12,13 +13,15 @@ export default function AllTheBooks(props) {
 
     const {theme} = useContext(ThemeContext);
 
-    const [selected, setSelected] = useState(""); // inserire l'asin del primo libro
+    const {selected, setSelected} = useContext(SelectionContext);
 
     const {searchValue} = useContext(SearchContext);
 
-    console.log(searchValue)
+    const filteredData = searchValue ? data.filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase())) : data;
 
-    const filteredData = searchValue ? data.filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase())) : data
+    useEffect(() => {
+        setSelected(filteredData[0].asin)
+    }, [searchValue])
 
     const handleSelection = (asin) => {
         setSelected(asin)
